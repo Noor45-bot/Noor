@@ -1,0 +1,83 @@
+ /* Styles from new 1.html */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        .text {
+            font-size: 80px;
+            color: #00ffff;
+            position: relative;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+        }
+
+        .bubble {
+            position: absolute;
+            bottom: 0;
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            animation: bubbleAnimation 5s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        @keyframes bubbleAnimation {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-200px) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        /* Styles from new 3.css */
+        .elution-gradient {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(255, 223, 186, 0.8) 0%, rgba(255, 182, 193, 0.9) 50%, rgba(255, 105, 180, 0.8) 100%), 
+                        radial-gradient(circle, rgba(255, 255, 255, 0.3) 20%, transparent 20%);
+            background-blend-mode: overlay;
+            border: 2px solid rgba(255, 105, 180, 0.6);
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(255, 105, 180, 0.5), inset 0 0 30px rgba(255, 255, 255, 0.2);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            margin-top: 20px; /* Added margin to separate the sections */
+        }
+
+        .elution-gradient:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(145deg, rgba(255, 223, 186, 0.5) 0%, rgba(255, 105, 180, 0.2) 100%);
+            mix-blend-mode: overlay;
+            animation: rotate 6s linear infinite;
+        }
+
+        .elution-gradient:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(255, 105, 180, 0.8), inset 0 0 40px rgba(255, 255, 255, 0.3);
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }

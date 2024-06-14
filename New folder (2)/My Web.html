@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Animation</title>
+	<link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <div class="text">Hello,</div>
+    <div class="text" id="noor-text">I am Noor</div>
+    <div class="elution-gradient"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const noorTextElement = document.querySelector('#noor-text');
+            const bubbleCount = 30;
+            
+            for (let i = 0; i < bubbleCount; i++) {
+                const bubble = document.createElement('div');
+                bubble.classList.add('bubble');
+                bubble.style.left = `${Math.random() * 100}%`;
+                bubble.style.animationDuration = `${3 + Math.random() * 2}s`;
+                bubble.style.animationDelay = `${Math.random() * 5}s`;
+                noorTextElement.appendChild(bubble);
+            }
+        });
+    </script>
+</body>
+</html>
